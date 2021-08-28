@@ -7,6 +7,10 @@ $(document).ready(function() {
         newEmployeeObject();
         addToDOM();
     });
+
+    $('#employee-table-body').on('click', '.delete-button', function() {
+        console.log('Deleted');
+    });
 });
 
 function newEmployeeObject() {
@@ -52,7 +56,7 @@ function addToDOM() {
                 <td>${employee.ID}</td>
                 <td>${employee.Title}</td>
                 <td>$${employee.Salary}</td>
-                <td><button id="${employee.ID}">Delete</button></td>
+                <td><button class="delete-button" id="${employee.ID}">Delete</button></td>
             </tr>
         `);
     }
