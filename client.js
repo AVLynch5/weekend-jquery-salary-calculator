@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', function() {
         newEmployeeObject();
-        //call calcMonthlySal();
+        calcMonthlySal();
     });
 });
 
@@ -32,7 +32,14 @@ function newEmployeeObject() {
 }//end newEmployeeObject
 
 function calcMonthlySal() {
-    //function code here
+    let annualTotal = 0;
+    for (let employee of employeeArray) {
+        annualTotal += parseInt(employee.Salary);//employee.Salary stored as a string, must convert to num to avoid concat
+    }
+    //console.log(annualTotal);//test to make sure summing not concat
+    monthlyTotal = annualTotal/12;
+    //console.log(monthlyTotal);//test to make sure number value calculated
+    return monthlyTotal;
 }//end calcMonthlySal
 
 
