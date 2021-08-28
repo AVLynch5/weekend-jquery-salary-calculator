@@ -5,6 +5,7 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', function() {
         newEmployeeObject();
+        //call calcMonthlySal();
     });
 });
 
@@ -30,7 +31,9 @@ function newEmployeeObject() {
     console.log(newObject, employeeArray);//test to see if newObject created and added to array. Note - all values entered as strings
 }//end newEmployeeObject
 
-
+function calcMonthlySal() {
+    //function code here
+}//end calcMonthlySal
 
 
 
