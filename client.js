@@ -1,8 +1,14 @@
-$(document).ready(readyNow);
+$(document).ready(function() {
+    //console.log('Hello World!');//test to see if scripts sourced properly
 
-function readyNow() {
-    //console.log('Hello World!');//test to see if client.js and jquery.js sourced
-}//end readyNow
+    let employeeArray = [];
+
+    $('#submit-button').on('click', function() {
+        //Call funct1
+    });
+});
+
+
 
 
 
