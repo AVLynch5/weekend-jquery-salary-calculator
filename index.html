@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="jquery.js"></script>
+        <script src="client.js"></script>
+    </head>
+    <body>
+        <!-- The Plan:
+        1. Layout the basic page styling - salary calc header, add employee subheader with 5 inputs and submit button,
+            employees subheader with empty table (6 columns), and total monthly with span
+        2. Figure out client.js
+        3. Return to index.html to add classes/ids as needed
+        -->
+        <header>
+            <h1>Salary Calculator</h1>
+        </header>
+        <div class="add-employee-subhead">
+            <h3>Add Employee</h3>
+            <input id="first-name" placeholder="First Name" />
+            <input id="last-name" placeholder="Last Name" />
+            <input id="id-num" placeholder="ID" />
+            <input id="job-title" placeholder="Title" />
+            <input id="annual-salary" placeholder="Annual Salary" />
+            <button id="submit-button">Submit</button>
+        </div>
+        <div class="employees-subhead">
+            <h3>Employees</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th><!-- Blank for delete column --></th>
+                    </tr>
+                </thead>
+                <tbody id="employee-table-body">
+                    <!-- Employee data gets appended here on click -->
+                </tbody>
+            </table>
+        </div>
+        <div class="monthly-total">
+            <h3>Monthly Total: <span id="salary-month-total"></span></h3>
+        </div>
+    </body>
+</html>
