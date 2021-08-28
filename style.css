@@ -50,3 +50,7 @@ body {
     border: 1px solid black;
     font-family: Quicksand;
 }
+
+.tablehead, .tablebody {
+    background-color: white;
+}
