@@ -1,15 +1,33 @@
+let employeeArray = [];
+
 $(document).ready(function() {
     //console.log('Hello World!');//test to see if scripts sourced properly
 
-    let employeeArray = [];
-
     $('#submit-button').on('click', function() {
-        //Call newEmployeeObject
+        newEmployeeObject();
     });
 });
 
 function newEmployeeObject() {
-
+    let firstName = $('#first-name').val();
+    let lastName = $('#last-name').val();
+    let idNum = $('#id-num').val();
+    let jobTitle = $('#job-title').val();
+    let annualSal = $('#annual-salary').val();
+    let newObject = {
+        First: firstName,
+        Last: lastName,
+        ID: idNum,
+        Title: jobTitle,
+        Salary: annualSal
+    };
+    employeeArray.push(newObject);
+    $('#first-name').val('');
+    $('#last-name').val('');
+    $('#id-num').val('');
+    $('#job-title').val('');
+    $('#annual-salary').val('');
+    console.log(newObject, employeeArray);//test to see if newObject created and added to array. Note - all values entered as strings
 }//end newEmployeeObject
 
 
