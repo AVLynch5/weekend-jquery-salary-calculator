@@ -5,8 +5,8 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', function() {
         newEmployeeObject();
-        calcMonthlySal();
-        //call addToDOM();
+        //calcMonthlySal();
+        addToDOM();
     });
 });
 
@@ -44,7 +44,22 @@ function calcMonthlySal() {
 }//end calcMonthlySal
 
 function addToDOM() {
-    //function code here
+    $('#employee-table-body').empty();
+    for (let employee of employeeArray) {
+        $('#employee-table-body').append(`
+            <tr>
+                <td>${employee.First}</td>
+                <td>${employee.Last}</td>
+                <td>${employee.ID}</td>
+                <td>${employee.Title}</td>
+                <td>$${employee.Salary}</td>
+                <td>Empty</td>
+            </tr>
+        `);
+    }
+    $('#salary-month-total').empty();
+    let monthlyCost = calcMonthlySal();
+    $('#salary-month-total').append(monthlyCost);
 }//end addToDOM
 
 
