@@ -5,7 +5,6 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', function() {
         newEmployeeObject();
-        //calcMonthlySal();
         addToDOM();
     });
 });
@@ -53,7 +52,7 @@ function addToDOM() {
                 <td>${employee.ID}</td>
                 <td>${employee.Title}</td>
                 <td>$${employee.Salary}</td>
-                <td>Empty</td>
+                <td><button>Delete</button></td>
             </tr>
         `);
     }
@@ -76,6 +75,7 @@ function addToDOM() {
  * step5: define funct3 - appends data to the DOM. Problem - if funct3 takes newObject and monthlyTotal as inputs, it can easily add new row to table and update monthly total span on click, HOWEVER hitting delete button will clear row and leave space empty.
  *      **funct 3 - takes monthlyTotal as input (maybe). First, clears #employee-table-body. for loop - for each object in array, appends row with required data to #employee-table-body. Appends monthlyTotal to span element and performs check. If <= 20K, green color class. If >20K, red color class.
  *      **Color change won't work - will likely need to clear div at beginning of funct3 and append h3 with text, span with class green/red, and monthlyTotal
+ *      **Edit - no need to run calcMonthlySal prior to addToDOM or have addToDOM take it as input param - can just call calcMonthlySal in addToDOM
  * Step6: Row delete buttons
  * Step7: create onclick function for row delete buttons - 3 param
  * Step8: define funct4 - clicking row delete button removes that employee from the array. Follow up with funct2 to recalculate monthlyTotal and funct3 to update the DOM
