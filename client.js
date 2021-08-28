@@ -8,10 +8,8 @@ $(document).ready(function() {
         addToDOM();
     });
 
-    $('#employee-table-body').on('click', '.delete-button', function() {
-        //console.log('Deleted');//test to make sure employee delete buttons work
-        //call removeEmployee();
-    });
+    $('#employee-table-body').on('click', '.delete-button', removeEmployee);
+    
 });
 
 function newEmployeeObject() {
@@ -67,7 +65,17 @@ function addToDOM() {
 }//end addToDOM
 
 function removeEmployee() {
-    //function code here
+    //console.log($(this));//to determine $(this) - it's the clicked delete button
+    let targetID = $(this).attr('id');
+    //console.log(target);//test to make sure targetID is the click button's id number (as a string)
+    //let rowToDelete = $(this).parent().parent();
+    for (let employee of employeeArray) {
+        if (employee.ID === targetID) {
+            objectIndexToDelete = employeeArray.indexOf(employee);
+        }
+    }
+    employeeArray.splice(objectIndexToDelete, 1);
+    addToDOM();
 }//end removeEmployee
 
 
