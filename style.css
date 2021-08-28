@@ -1,0 +1,14 @@
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+/* Base style from w3schools */
+
+table, th, td {
+    border:1px solid black;
+}
+

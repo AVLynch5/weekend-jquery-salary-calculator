@@ -67,7 +67,7 @@ function addToDOM() {
         spanColor = 'green';
     }
     $('#monthly-total').append(`<h3>Monthly Total: $<span class="${spanColor}" id="salary-month-total"></span></h3>`);
-    $('#salary-month-total').append(`Monthly Total: $${monthlyCost}`);
+    $('#salary-month-total').append(`${monthlyCost}`);
 }//end addToDOM
 
 function removeEmployee() {
