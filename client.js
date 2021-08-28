@@ -68,7 +68,7 @@ function removeEmployee() {
     //console.log($(this));//to determine $(this) - it's the clicked delete button
     let targetID = $(this).attr('id');
     //console.log(target);//test to make sure targetID is the click button's id number (as a string)
-    //let rowToDelete = $(this).parent().parent();
+    //let rowToDelete = $(this).parent().parent(); - instead of creating object array and clearing/re-appending table with each object addition/deletion, I could use this to delete the row/<tr>. AKA, streamline function calls and cut down on need for loops.
     for (let employee of employeeArray) {
         if (employee.ID === targetID) {
             objectIndexToDelete = employeeArray.indexOf(employee);
@@ -87,7 +87,7 @@ function removeEmployee() {
  * step2: create onclick function - clicking submit button triggers ghost function.
  * step3: define funct1 - takes no param. Declare var for each input field. Declare newObject with properties. Store input data in newObject. Push newObject to array. Clear input fields. Option - return newObject
  * step4: define funct2 - takes no param. Declare annualTotal var. For loop to sum annual salaries in array of objects. MAKE SURE SUMMIMNG NOT CONCAT. Declare var monthlyTotal = annualTotal/12. return monthlyTotal
- * step5: define funct3 - appends data to the DOM. Problem - if funct3 takes newObject and monthlyTotal as inputs, it can easily add new row to table and update monthly total span on click, HOWEVER hitting delete button will clear row and leave space empty.
+ * step5: define funct3 - appends data to the DOM. If funct3 takes newObject as input, it can easily add new row to table and update monthly total span on click. HOWEVER, how to delete the row (figured out).
  *      **funct 3 - takes monthlyTotal as input (maybe). First, clears #employee-table-body. for loop - for each object in array, appends row with required data to #employee-table-body. Appends monthlyTotal to span element and performs check. If <= 20K, green color class. If >20K, red color class.
  *      **Color change won't work - will likely need to clear div at beginning of funct3 and append h3 with text, span with class green/red, and monthlyTotal
  *      **Edit - no need to run calcMonthlySal prior to addToDOM or have addToDOM take it as input param - can just call calcMonthlySal in addToDOM
