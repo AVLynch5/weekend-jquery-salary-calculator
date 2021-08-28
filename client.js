@@ -40,7 +40,8 @@ function calcMonthlySal() {
         annualTotal += parseInt(employee.Salary);//employee.Salary stored as a string, must convert to num to avoid concat
     }
     //console.log(annualTotal);//test to make sure summing not concat
-    monthlyTotal = annualTotal/12;
+    realmonthlyTotal = annualTotal/12;
+    monthlyTotal = realmonthlyTotal.toFixed(2);//to round number value to 2 decimal places
     //console.log(monthlyTotal);//test to make sure number value calculated
     return monthlyTotal;
 }//end calcMonthlySal
