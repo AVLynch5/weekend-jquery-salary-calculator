@@ -59,9 +59,15 @@ function addToDOM() {
             </tr>
         `);
     }
-    $('#salary-month-total').empty();
+    $('#monthly-total').empty();
     let monthlyCost = calcMonthlySal();
-    $('#salary-month-total').append(monthlyCost);
+    if (monthlyCost > 20000) {
+        spanColor = 'red';
+    } else if (monthlyCost <= 20000) {
+        spanColor = 'green';
+    }
+    $('#monthly-total').append(`<h3>Monthly Total: $<span class="${spanColor}" id="salary-month-total"></span></h3>`);
+    $('#salary-month-total').append(`Monthly Total: $${monthlyCost}`);
 }//end addToDOM
 
 function removeEmployee() {
