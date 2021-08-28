@@ -9,7 +9,8 @@ $(document).ready(function() {
     });
 
     $('#employee-table-body').on('click', '.delete-button', function() {
-        console.log('Deleted');
+        //console.log('Deleted');//test to make sure employee delete buttons work
+        //call removeEmployee();
     });
 });
 
@@ -65,7 +66,9 @@ function addToDOM() {
     $('#salary-month-total').append(monthlyCost);
 }//end addToDOM
 
-
+function removeEmployee() {
+    //function code here
+}//end removeEmployee
 
 
 
