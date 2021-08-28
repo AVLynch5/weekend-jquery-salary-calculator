@@ -52,7 +52,7 @@ function addToDOM() {
                 <td>${employee.ID}</td>
                 <td>${employee.Title}</td>
                 <td>$${employee.Salary}</td>
-                <td><button>Delete</button></td>
+                <td><button id="${employee.ID}">Delete</button></td>
             </tr>
         `);
     }
@@ -77,6 +77,7 @@ function addToDOM() {
  *      **Color change won't work - will likely need to clear div at beginning of funct3 and append h3 with text, span with class green/red, and monthlyTotal
  *      **Edit - no need to run calcMonthlySal prior to addToDOM or have addToDOM take it as input param - can just call calcMonthlySal in addToDOM
  * Step6: Row delete buttons
+ *      **idea - give each delete button id == employee object id for easy targeting in array & deletion
  * Step7: create onclick function for row delete buttons - 3 param
  * Step8: define funct4 - clicking row delete button removes that employee from the array. Follow up with funct2 to recalculate monthlyTotal and funct3 to update the DOM
  */
