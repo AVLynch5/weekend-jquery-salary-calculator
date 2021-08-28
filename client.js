@@ -4,11 +4,13 @@ $(document).ready(function() {
     let employeeArray = [];
 
     $('#submit-button').on('click', function() {
-        //Call funct1
+        //Call newEmployeeObject
     });
 });
 
+function newEmployeeObject() {
 
+}//end newEmployeeObject
 
 
 
