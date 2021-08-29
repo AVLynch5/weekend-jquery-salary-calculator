@@ -24,6 +24,10 @@ function newEmployeeObject() {
         alert('Please input all employee information');
         return;
     }
+    if (annualSal < 0) {
+        alert('Annual Salary must be a positive number');
+        return;
+    }
     let newObject = {
         First: firstName,
         Last: lastName,
