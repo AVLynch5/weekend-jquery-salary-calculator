@@ -1,9 +1,9 @@
 .green {
-    background-color: green;
+    background-color: rgb(127, 236, 127);
 }
 
 .red {
-    background-color: red;
+    background-color: rgb(250, 98, 98);
 }
 
 /* Base style from w3schools */
