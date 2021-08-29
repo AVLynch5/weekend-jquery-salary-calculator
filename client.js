@@ -3,6 +3,8 @@ let employeeArray = [];
 $(document).ready(function() {
     //console.log('Hello World!');//test to see if scripts sourced properly
 
+    addToDOM();
+
     $('#submit-button').on('click', function() {
         newEmployeeObject();
         addToDOM();
@@ -18,6 +20,10 @@ function newEmployeeObject() {
     let idNum = $('#id-num').val();
     let jobTitle = $('#job-title').val();
     let annualSal = $('#annual-salary').val();
+    if (!firstName || !lastName || !idNum || !jobTitle || !annualSal) {
+        alert('Please input all employee information');
+        return;
+    }
     let newObject = {
         First: firstName,
         Last: lastName,
