@@ -14,6 +14,12 @@ table, th, td {
 
 table {
     width: 55%;
+    margin: 0 auto;
+}
+
+.input-field {
+    text-align: center;
+    margin: 0 auto;
 }
 
 td {
@@ -30,10 +36,6 @@ header {
 .add-employee-subhead {
     background-color: #A4B2EB;
     padding: 1%;
-}
-
-.add-employee-subhead input {
-    margin: 0 auto;
 }
 
 .employees-subhead {
@@ -53,4 +55,8 @@ body {
 
 .tablehead, .tablebody {
     background-color: white;
+}
+
+#monthly-total {
+    padding: 1%;
 }

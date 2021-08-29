@@ -25,12 +25,16 @@
         </header>
         <div class="add-employee-subhead">
             <h3>Add Employee</h3>
-            <input id="first-name" placeholder="First Name" />
-            <input id="last-name" placeholder="Last Name" />
-            <input id="id-num" placeholder="ID" />
-            <input id="job-title" placeholder="Title" />
-            <input id="annual-salary" placeholder="Annual Salary" />
-            <button id="submit-button">Submit</button>
+            <div class="input-field">
+                <input id="first-name" placeholder="First Name" />
+                <input id="last-name" placeholder="Last Name" />
+                <input id="id-num" placeholder="ID" />
+                <input id="job-title" placeholder="Title" />
+                <input id="annual-salary" placeholder="Annual Salary" />
+                <br>
+                <br>
+                <button id="submit-button">Submit</button>
+            </div>
         </div>
         <div class="employees-subhead">
             <h3>Employees</h3>
@@ -42,7 +46,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Annual Salary</th>
-                        <th><!-- Blank for delete column --></th>
+                        <th>     <!-- Blank for delete column -->      </th>
                     </tr>
                 </thead>
                 <tbody id="employee-table-body" class="tablebody">
