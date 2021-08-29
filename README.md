@@ -29,11 +29,11 @@ No installation required. Simply download or clone this repository and open inde
 
 ## Screenshots
 
-[](Pictures/SalaryCalculator1.png)
+![One employee, monthly total less than $20,000](Pictures/SalaryCalculator1.png)
 
-[](Pictures/SalaryCalculator2.png)
+![Two eomployees, monthly total exceeds $20,000](Pictures/SalaryCalculator2.png)
 
-[](Pictures/SalaryCalculator3.png)
+![After deleting an employee, monthly total less than $20,000](Pictures/SalaryCalculator3.png)
 
 ## Languages 
 
