@@ -9,7 +9,8 @@ This application is a convenient tool that could help employers keep track of th
 The program allows users to input the following employee information: 
 * first name
 * last name
-* ID, title
+* ID
+* title
 * annual salary
 
 Hitting the 'submit' button stores the provided information as an employee object in an array and displays it to the DOM in a table, along with the calculated total monthly cost of employee salaries. If that monthly total is $20,000 or less the field displays green, else it displays red.
@@ -28,6 +29,11 @@ No installation required. Simply download or clone this repository and open inde
 
 ## Screenshots
 
+[](Pictures/SalaryCalculator1.png)
+
+[](Pictures/SalaryCalculator2.png)
+
+[](Pictures/SalaryCalculator3.png)
 
 ## Languages 
 
@@ -43,5 +49,3 @@ Many thanks to [Prime Digital Academy](https://www.primeacademy.io/?utm_campaign
 
 Please contact me at anthonyvlynch5@gmail.com with any concerns, problems, or suggested improvements.
 
-
-[here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md)
