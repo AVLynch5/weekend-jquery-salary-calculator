@@ -1,16 +1,16 @@
-let employeeArray = [];
+let employeeArray = [];//empty array to store employee objects
 
 $(document).ready(function() {
     //console.log('Hello World!');//test to see if scripts sourced properly
 
-    addToDOM();
+    addToDOM();//initally runs function while employeeArray is empty to append monthlyTotal = 0 to the DOM
 
-    $('#submit-button').on('click', function() {
-        newEmployeeObject();
-        addToDOM();
+    $('#submit-button').on('click', function() {//ghost function - on click, two functions are called
+        newEmployeeObject();//retrieves inputted employee info and stores it as an object in employeeArray
+        addToDOM();//clears the displayed table, appends all employee info stored in employeeArray to the displayed table, and calls calcMonthSal to calculate and display the monthly costs
     });
 
-    $('#employee-table-body').on('click', '.delete-button', removeEmployee);
+    $('#employee-table-body').on('click', '.delete-button', removeEmployee);//event delegation - when document is ready, .delete-button elements do not yet exist
     
 });
 
@@ -22,10 +22,10 @@ function newEmployeeObject() {
     let annualSal = $('#annual-salary').val();
     if (!firstName || !lastName || !idNum || !jobTitle || !annualSal) {
         alert('Please input all employee information');
-        return;
+        return;//check to ensure all input fields filled in
     }
     if (annualSal < 0) {
-        alert('Annual Salary must be a positive number');
+        alert('Annual Salary must be a positive number');//check to make sure annual salary field given a positive value
         return;
     }
     let newObject = {
@@ -35,18 +35,18 @@ function newEmployeeObject() {
         Title: jobTitle,
         Salary: annualSal
     };
-    employeeArray.push(newObject);
-    $('#first-name').val('');
+    employeeArray.push(newObject);//adds new employee object to the employeeArray
+    $('#first-name').val('');//clears input fields
     $('#last-name').val('');
     $('#id-num').val('');
     $('#job-title').val('');
     $('#annual-salary').val('');
-    console.log(newObject, employeeArray);//test to see if newObject created and added to array. Note - all values entered as strings
+    //console.log(newObject, employeeArray);//test to see if newObject created and added to array. Note - all values entered as strings
 }//end newEmployeeObject
 
 function calcMonthlySal() {
     let annualTotal = 0;
-    for (let employee of employeeArray) {
+    for (let employee of employeeArray) {//sums all employee annual salary info stored in the employeeArray
         annualTotal += parseInt(employee.Salary);//employee.Salary stored as a string, must convert to num to avoid concat
     }
     //console.log(annualTotal);//test to make sure summing not concat
@@ -57,8 +57,8 @@ function calcMonthlySal() {
 }//end calcMonthlySal
 
 function addToDOM() {
-    $('#employee-table-body').empty();
-    for (let employee of employeeArray) {
+    $('#employee-table-body').empty();//clears the table displayed on the DOM
+    for (let employee of employeeArray) {//for each employee object stored in employeeArray, create new table row with stored object info and delete button
         $('#employee-table-body').append(`
             <tr>
                 <td>${employee.First}</td>
@@ -70,15 +70,15 @@ function addToDOM() {
             </tr>
         `);
     }
-    $('#monthly-total').empty();
+    $('#monthly-total').empty();//clears monthly total field
     let monthlyCost = calcMonthlySal();
     if (monthlyCost > 20000) {
         spanColor = 'red';
     } else if (monthlyCost <= 20000) {
         spanColor = 'green';
-    }
-    $('#monthly-total').append(`<h3>Monthly Total: $<span class="${spanColor}" id="salary-month-total"></span></h3>`);
-    $('#salary-month-total').append(`${monthlyCost}`);
+    }//value check to determine background color of monthly total field
+    $('#monthly-total').append(`<h3>Monthly Total: $<span class="${spanColor}" id="salary-month-total"></span></h3>`);//re-appends h3 and span with span class equal to the appropriate span background color
+    $('#salary-month-total').append(`${monthlyCost}`);//re-appends monthly cost value to the span element. Could accomplish this append in same line as line 80 (prev) using ${monthlyCost}
 }//end addToDOM
 
 function removeEmployee() {
@@ -88,10 +88,10 @@ function removeEmployee() {
     //let rowToDelete = $(this).parent().parent(); - instead of creating object array and clearing/re-appending table with each object addition/deletion, I could use this to delete the row/<tr>. AKA, streamline function calls and cut down on need for loops.
     for (let employee of employeeArray) {
         if (employee.ID === targetID) {
-            objectIndexToDelete = employeeArray.indexOf(employee);
+            objectIndexToDelete = employeeArray.indexOf(employee);//gets most up to data index of the employee object in employeeArray.
         }
     }
-    employeeArray.splice(objectIndexToDelete, 1);
+    employeeArray.splice(objectIndexToDelete, 1);//removes employee object from employeeArray
     addToDOM();
 }//end removeEmployee
 
